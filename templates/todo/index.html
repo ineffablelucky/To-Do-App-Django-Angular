@@ -5,9 +5,22 @@
     <meta charset="utf-8">
     <title>To Do</title>
   </head>
-  <body>
+  <body ng-app="tOdO" ng-controller="tOdOController">
     <h1>TO DO LIST</h1>
+    <form ng-submit="todoAdd()">
+      <input type="text" ng-model="todoInput" placeholder="Add a new to do..">
+      <input type="submit" value="Submit">
+    </form>
+    <br>
+    <div ng-repeat="todo in todoList">
+      <input type="checkbox" ng-model="todo.done"><span ng-bind="todo.todoText"></span>
+    </div>
 
+    <p>
+      <button ng-click="remove()">Done</button>
+    </p>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   <script src="{% static 'js/todo.js' %}"></script>
   </body>
 </html>

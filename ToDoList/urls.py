@@ -6,5 +6,5 @@ from ToDoList.views import ToDoView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='todo/index.html')),
-    path('todo/api/'.ToDoView.as_view())
+    path('todo/api/', ToDoView.as_view())
 ]
